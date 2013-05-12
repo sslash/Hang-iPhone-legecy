@@ -96,7 +96,7 @@ CLLocationManager *locationManager;
 
 - (void)sendPostToAPI:(NSString*)text
 {
-    NSString *ownerId = @"1";
+    NSString *ownerId = @"5";
     NSString *logString =
     [NSString stringWithFormat: @"Will send: %@, to %@!", text, ownerId];
     NSLog(@"%@", logString);
@@ -161,7 +161,8 @@ CLLocationManager *locationManager;
     }
     
     NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
-    cell.postDate.text = @"DATO";
+    cell.postDate.text = [post objectForKey: @"timeCreated"];
+    NSLog(@"DATO: %@", [post objectForKey: @"timeCreated"]);
     //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
     cell.postText.text = [post objectForKey:@"text"];
 
