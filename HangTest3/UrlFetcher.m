@@ -81,8 +81,8 @@
             //NSLog(@"\nid: %@, name: %@, distance: %@", venueId, venueName, venueDistance);
         }
         
-        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES];
-        [venueArray sortUsingDescriptors:[NSArray arrayWithObject:sort]];
+        //NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES];
+        //[venueArray sortUsingDescriptors:[NSArray arrayWithObject:sort]];
         
         WallViewController *wvc;
         wvc = [self caller2];
