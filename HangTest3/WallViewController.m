@@ -165,7 +165,7 @@ CLLocationManager *locationManager;
     NSLog(@"DATO: %@", [post objectForKey: @"timeCreated"]);
     //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
     cell.postText.text = [post objectForKey:@"text"];
-
+    //ape
     /*
     long timeStampString1 = (long)[post objectForKey: @"timeCreated"];
     
