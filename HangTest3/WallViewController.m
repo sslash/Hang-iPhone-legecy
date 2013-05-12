@@ -54,9 +54,15 @@ CLLocationManager *locationManager;
 
 -(void) labelTap
 {
-    NSLog(@"nigga");
-    [self.placesTableView setAlpha:1];
-    [self.placesTableView setNeedsDisplay];
+    if (self.placesTablePressed == false ) {
+        self.placesTablePressed = true;
+        [self.placesTableView setAlpha:1];
+        [self.placesTableView setNeedsDisplay];
+    } else {
+        self.placesTablePressed = false;
+        [self.placesTableView setAlpha:0];
+        [self.placesTableView setNeedsDisplay];
+    }
 }
 
 - (void)viewDidUnload {
@@ -144,6 +150,7 @@ CLLocationManager *locationManager;
     APIURLFetcher * fetcher = [[APIURLFetcher alloc] initWithParam:self];
     [fetcher fetchPostsFromAPI:self.currentVenue.venueId];
 }
+
 - (IBAction)f5ButtonPressed:(id)sender {
     [self updateCurrentVenue];
     [self setTopNavBar];
@@ -153,8 +160,6 @@ CLLocationManager *locationManager;
 }
 
 - (IBAction)pushButtonPressed:(id)sender {
-    NSLog(@"Text btn entered: ");
-    NSLog(@"%@", self.textField.text);
     [self sendPostToAPI:self.textField.text];
     self.textField.text = @"";
     [self.textField resignFirstResponder];
@@ -171,9 +176,7 @@ CLLocationManager *locationManager;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"juuupp");
-    
+{    
     if ([tableView.restorationIdentifier isEqual: @"placesData"]){
         static NSString *CellIdentifier = @"placeCell";
         
@@ -202,7 +205,7 @@ CLLocationManager *locationManager;
         NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
         //cell.postDate.text = @"DATO";
         //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
-        cell.postText.text = [post objectForKey:@"text"];
+        //cell.postText.text = [post objectForKey:@"text"];
         return cell;
     }
 }
