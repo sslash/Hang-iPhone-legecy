@@ -192,7 +192,7 @@ CLLocationManager *locationManager;
         
     } else {
     
-        static NSString *CellId = @"postCell";
+        static NSString *CellId = @"PostTableCell";
         PostTableCell *cell = (PostTableCell *)[tableView dequeueReusableCellWithIdentifier:CellId];
         if (cell == nil)
         {
