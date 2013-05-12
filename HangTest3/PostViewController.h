@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PostViewController : UIViewController
+@interface PostViewController : UIViewController<UITextFieldDelegate>
 
 
 @property (strong, nonatomic) NSArray *postDetails;

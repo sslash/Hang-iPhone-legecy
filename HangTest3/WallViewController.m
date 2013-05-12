@@ -114,7 +114,7 @@ CLLocationManager *locationManager;
 
 - (void)sendPostToAPI:(NSString*)text
 {
-    NSString *ownerId = @"1";
+    NSString *ownerId = @"5";
     NSString *logString =
     [NSString stringWithFormat: @"Will send: %@, to %@!", text, ownerId];
     NSLog(@"%@", logString);
