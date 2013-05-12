@@ -210,7 +210,7 @@ CLLocationManager *locationManager;
         
         // Set up the cell...
         NSString *cellValue = [self.placesTableData objectAtIndex:indexPath.row];
-        cell.text = cellValue;
+        cell.textLabel.text = cellValue;
         
         return cell;
         
