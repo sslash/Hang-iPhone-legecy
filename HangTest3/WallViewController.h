@@ -32,5 +32,6 @@
 - (void)sendPostToAPI:(NSString*)text;
 - (void)fetchFoursqare;
 - (void)done:(NSArray*) posts;
+- (void)updateNavBar;
 
 @end

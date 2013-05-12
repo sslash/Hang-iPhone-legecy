@@ -78,7 +78,7 @@
             HANGVenue *v = [[HANGVenue alloc] initWithId:venueId andName:venueName andDistance:venueDistance];
             [venueArray addObject:v];
             
-            NSLog(@"\nid: %@, name: %@, distance: %@", venueId, venueName, venueDistance);
+            //NSLog(@"\nid: %@, name: %@, distance: %@", venueId, venueName, venueDistance);
         }
         
         NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES];
@@ -87,6 +87,7 @@
         WallViewController *wvc;
         wvc = [self caller2];
         wvc.venues = venueArray;
+        [wvc updateNavBar];
     }
 }
 

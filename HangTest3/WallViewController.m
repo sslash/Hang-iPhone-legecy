@@ -78,6 +78,21 @@ CLLocationManager *locationManager;
     [locationManager startUpdatingLocation];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+
+    [self fetchFoursqare];
+}
+
 - (void) fetchFoursqare
 {
     
@@ -110,6 +125,12 @@ CLLocationManager *locationManager;
     } else {
         self.placeLabel.text = @"";
     }
+}
+
+- (void)updateNavBar
+{
+    [self updateCurrentVenue];
+    [self setTopNavBar];
 }
 
 - (void)sendPostToAPI:(NSString*)text
@@ -192,7 +213,7 @@ CLLocationManager *locationManager;
         
     } else {
     
-        static NSString *CellId = @"postCell";
+        static NSString *CellId = @"PostTableCell";
         PostTableCell *cell = (PostTableCell *)[tableView dequeueReusableCellWithIdentifier:CellId];
         if (cell == nil)
         {
