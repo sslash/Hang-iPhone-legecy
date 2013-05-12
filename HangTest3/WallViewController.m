@@ -195,7 +195,7 @@ CLLocationManager *locationManager;
         
     } else {
     
-        static NSString *CellId = @"postCell";
+        static NSString *CellId = @"PostTableCell";
         PostTableCell *cell = (PostTableCell *)[tableView dequeueReusableCellWithIdentifier:CellId];
         if (cell == nil)
         {
@@ -203,7 +203,7 @@ CLLocationManager *locationManager;
         }
     
         NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
-        //cell.postDate.text = @"DATO";
+        cell.postDate.text = [post objectForKey: @"timeCreated"];
         //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
         //cell.postText.text = [post objectForKey:@"text"];
         return cell;
