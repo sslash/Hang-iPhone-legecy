@@ -239,7 +239,7 @@ CLLocationManager *locationManager;
         NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
         cell.postDate.text = [post objectForKey: @"timeCreated"];
         //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
-        //cell.postText.text = [post objectForKey:@"text"];
+        cell.postText.text = [post objectForKey:@"text"];
         return cell;
     }
 }
