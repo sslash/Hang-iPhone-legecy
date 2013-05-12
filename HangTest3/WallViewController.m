@@ -55,15 +55,28 @@ CLLocationManager *locationManager;
 -(void) labelTap
 {
     if (self.placesTablePressed == false ) {
-        self.placesTablePressed = true;
-        [self.placesTableView setAlpha:1];
-        [self.placesTableView setNeedsDisplay];
+        [self showPlacesTable];
     } else {
-        self.placesTablePressed = false;
-        [self.placesTableView setAlpha:0];
-        [self.placesTableView setNeedsDisplay];
+        [self hidePlacesTable];
     }
 }
+
+-(void) hidePlacesTable
+{
+    self.placesTablePressed = false;
+    [self.placesTableView setAlpha:0];
+    [self.placesTableView setNeedsDisplay];
+}
+
+-(void) showPlacesTable
+{
+    self.placesTablePressed = true;
+    [self.placesTableView setAlpha:1];
+    [self.placesTableView setNeedsDisplay];
+    
+}
+
+
 
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -115,6 +128,7 @@ CLLocationManager *locationManager;
 - (void)updateCurrentVenue
 {
     if ([self.venues count] > 0) {
+        [self.placesTableView reloadData];
         self.currentVenue = [self.venues objectAtIndex:0];
         [self fetchPostsFromAPI];
     } else {
@@ -176,8 +190,6 @@ CLLocationManager *locationManager;
     [self updateCurrentVenue];
     [self setTopNavBar];
     [self fetchFoursqare];
-    
-    /* Fetch posts from wall */
 }
 
 - (IBAction)pushButtonPressed:(id)sender {
@@ -190,7 +202,8 @@ CLLocationManager *locationManager;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([tableView.restorationIdentifier isEqual: @"placesData"]){
-        return [self.placesTableData count];
+        //return [self.placesTableData count];
+        return 5; // Should check if there are actually 4
     }else {
         return [self.tableData count];
     }
@@ -209,8 +222,8 @@ CLLocationManager *locationManager;
         }
         
         // Set up the cell...
-        NSString *cellValue = [self.placesTableData objectAtIndex:indexPath.row];
-        cell.textLabel.text = cellValue;
+        HANGVenue *cellValue = [self.venues objectAtIndex:indexPath.row];
+        cell.textLabel.text = cellValue.name;
         
         return cell;
         
@@ -242,6 +255,7 @@ CLLocationManager *locationManager;
 
 
 -(void) done:(NSArray*) posts {
+    NSLog(@"Posts fetched. Will reload post data in GUI");
     [self.tableData setArray:posts];
     //self.tableData = posts;
     [self.tableView reloadData];
@@ -271,9 +285,20 @@ CLLocationManager *locationManager;
         NSDictionary * post = [self.tableData objectAtIndex:myIndexPath.row];
  
         postViewController.postDetails = [[NSArray alloc]
-                                             initWithObjects: [post objectForKey:@"text"],
-                                                                nil];
+                                             initWithObjects: [post objectForKey:@"text"],[post objectForKey:@"id"], nil];
     }
+}
+// LOL
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"index path: %@", indexPath );
+    int index = [indexPath indexAtPosition:1];
+    
+    NSLog(@"pressed: %d", index );
+    self.currentVenue = [self.venues objectAtIndex:index];
+    [self fetchPostsFromAPI];
+    [self setTopNavBar];
+    [self hidePlacesTable];
 }
 
 /*

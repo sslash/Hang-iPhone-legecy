@@ -13,5 +13,7 @@
 
 @property (strong, nonatomic) NSArray *postDetails;
 @property (strong, nonatomic) IBOutlet UILabel *postLabel;
+@property (strong, nonatomic) IBOutlet UITextField *commentInput;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *postCommentBtn;
 
 @end

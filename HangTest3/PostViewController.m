@@ -25,6 +25,42 @@
     }
     return self;
 }
+- (IBAction)postCommentBtnTouched:(id)sender {
+    NSLog(@"post comment: %@", self.commentInput.text);
+    [self sendCommentToApi: self.commentInput.text];
+    self.commentInput.text = @"";
+    [self.commentInput resignFirstResponder];
+}
+
+- (void) sendCommentToApi:(NSString*) text {
+    
+    NSString *ownerId = @"5";
+    NSString *logString =
+    [NSString stringWithFormat: @"Will send (comment: %@, to %@!", text, ownerId];
+    NSLog(@"%@", logString);
+    NSLog(@"ID: %@", [self.postDetails objectAtIndex:1]);
+    id postId = [self.postDetails objectAtIndex:1];
+    
+    NSString *urlStr =
+    [NSString stringWithFormat: @"http://hang.cloudfoundry.com/newComment/?postId=%@&ownerId=%@",
+     postId, ownerId]; //TODO: change to post id
+    
+    NSMutableURLRequest *request =
+    [[NSMutableURLRequest alloc] initWithURL:
+     [NSURL URLWithString:urlStr]];
+    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
+                         text, @"text", nil];
+    NSError *error;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+    [request setHTTPBody:postdata];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%d", [postdata
+                                                         length]] forHTTPHeaderField:@"Content-Length"];
+    
+    (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
 
 - (void)viewDidLoad
 {

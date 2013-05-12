@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -117,10 +117,10 @@
                                     <constraint firstItem="7E1-sz-Qqm" firstAttribute="centerX" secondItem="lEY-xL-fQG" secondAttribute="centerX" type="default" id="t4X-Vf-Bt5"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" restorationIdentifier="placesData" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" sectionIndexMinimumDisplayRowCount="5" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-Mu-M83">
+                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" restorationIdentifier="placesData" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" sectionIndexMinimumDisplayRowCount="5" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-Mu-M83">
                                 <color key="backgroundColor" red="0.93779721469999999" green="0.91639775199999995" blue="0.78952975599999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="FvV-y6-BRB"/>
+                                    <constraint firstAttribute="height" constant="131" id="YxT-WC-war"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="ldj-Qa-u4p" id="Gi0-v4-Sbx"/>
@@ -133,16 +133,16 @@
                             <constraint firstItem="hxg-9k-OAy" firstAttribute="leading" secondItem="uOb-Ab-nyN" secondAttribute="leading" type="default" id="3GD-5G-pkw"/>
                             <constraint firstItem="IXR-Mu-M83" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="34" id="5gO-64-qO4"/>
                             <constraint firstItem="Qbt-07-Mvl" firstAttribute="centerX" secondItem="hxg-9k-OAy" secondAttribute="centerX" type="default" id="HA4-zl-vUR"/>
+                            <constraint firstItem="lEY-xL-fQG" firstAttribute="trailing" secondItem="svP-Ao-YIc" secondAttribute="trailing" type="default" id="LwN-SZ-1gG"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" type="default" id="OCp-s1-2P7"/>
-                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="IXR-Mu-M83" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZXU-f9-px8"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="trailing" secondItem="svP-Ao-YIc" secondAttribute="trailing" type="default" id="P1X-CI-2YJ"/>
                             <constraint firstItem="hxg-9k-OAy" firstAttribute="top" secondItem="lEY-xL-fQG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dTN-IO-HAr"/>
                             <constraint firstItem="hxg-9k-OAy" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="45" id="dfr-OR-5BI"/>
+                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="142" id="eJv-uz-XCJ"/>
                             <constraint firstItem="IXR-Mu-M83" firstAttribute="leading" secondItem="svP-Ao-YIc" secondAttribute="leading" type="default" id="gaW-RL-eJq"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="leading" secondItem="svP-Ao-YIc" secondAttribute="leading" type="default" id="igJ-1v-tAK"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="centerX" secondItem="hxg-9k-OAy" secondAttribute="centerX" type="default" id="o31-BV-Bdh"/>
-                            <constraint firstItem="IXR-Mu-M83" firstAttribute="trailing" secondItem="lEY-xL-fQG" secondAttribute="trailing" type="default" id="t1f-F8-Esa"/>
                             <constraint firstItem="hxg-9k-OAy" firstAttribute="trailing" secondItem="uOb-Ab-nyN" secondAttribute="trailing" type="default" id="tBg-2B-pun"/>
-                            <constraint firstItem="IXR-Mu-M83" firstAttribute="centerX" secondItem="svP-Ao-YIc" secondAttribute="centerX" type="default" id="vEB-Ty-ucW"/>
                             <constraint firstItem="Qbt-07-Mvl" firstAttribute="top" secondItem="hxg-9k-OAy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="z3q-DZ-tnm"/>
                         </constraints>
                     </view>
@@ -185,7 +185,11 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </barButtonItem>
-                                    <barButtonItem title="Post" id="TdR-fh-J17"/>
+                                    <barButtonItem title="Post" id="TdR-fh-J17">
+                                        <connections>
+                                            <action selector="postCommentBtnTouched:" destination="qG4-ME-uEb" id="MAk-ff-SnN"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="postText" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ke-vP-YY0">
@@ -205,6 +209,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="qhI-eA-KVE"/>
                     <connections>
+                        <outlet property="commentInput" destination="8Df-Ww-2VU" id="IIS-ZN-jeS"/>
+                        <outlet property="postCommentBtn" destination="TdR-fh-J17" id="Kd3-Jo-LrP"/>
                         <outlet property="postLabel" destination="7Ke-vP-YY0" id="hnG-gc-1TE"/>
                     </connections>
                 </viewController>
@@ -230,6 +236,8 @@
         <class className="PostViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="commentInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="postCommentBtn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
