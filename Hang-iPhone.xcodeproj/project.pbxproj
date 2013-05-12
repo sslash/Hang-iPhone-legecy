@@ -33,6 +33,8 @@
 		4385A031173F13D6001A4369 /* APIURLFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4385A02D173F13C3001A4369 /* APIURLFetcher.m */; };
 		4385A032173F13DB001A4369 /* HANGVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4385A022173F1328001A4369 /* HANGVenue.m */; };
 		4385A033173F13DF001A4369 /* HANGPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4385A024173F1328001A4369 /* HANGPost.m */; };
+		AFE1F62D173FD6DE004225AC /* topnavbar_img.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE1F62C173FD6DE004225AC /* topnavbar_img.png */; };
+		AFE1F62F173FDA27004225AC /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE1F62E173FDA26004225AC /* back_btn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		4385A02B173F13C3001A4369 /* UrlFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlFetcher.m; sourceTree = "<group>"; };
 		4385A02C173F13C3001A4369 /* APIURLFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIURLFetcher.h; sourceTree = "<group>"; };
 		4385A02D173F13C3001A4369 /* APIURLFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIURLFetcher.m; sourceTree = "<group>"; };
+		AFE1F62C173FD6DE004225AC /* topnavbar_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topnavbar_img.png; sourceTree = "<group>"; };
+		AFE1F62E173FDA26004225AC /* back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_btn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		4357BA80173F031C008D344A /* Hang-iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				AFE1F62B173FD6BE004225AC /* Resources */,
 				4385A02A173F13C3001A4369 /* UrlFetcher.h */,
 				4385A02B173F13C3001A4369 /* UrlFetcher.m */,
 				4385A02C173F13C3001A4369 /* APIURLFetcher.h */,
@@ -229,6 +234,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		AFE1F62B173FD6BE004225AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AFE1F62E173FDA26004225AC /* back_btn.png */,
+				AFE1F62C173FD6DE004225AC /* topnavbar_img.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -305,6 +319,8 @@
 				4357BA8F173F031C008D344A /* Default@2x.png in Resources */,
 				4357BA91173F031C008D344A /* Default-568h@2x.png in Resources */,
 				4357BAB4173F0348008D344A /* WallStoryboard.storyboard in Resources */,
+				AFE1F62D173FD6DE004225AC /* topnavbar_img.png in Resources */,
+				AFE1F62F173FDA27004225AC /* back_btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

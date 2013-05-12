@@ -16,6 +16,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // set navbar background
+    UIImage *navBackgroundImage = [UIImage imageNamed:@"topnavbar_img"];
+    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    
+    // set standard back button
+    /*
+    UIImage *backButtonImage = [UIImage imageNamed: @"back_btn"];
+    backButtonImage = [backButtonImage stretchableImageWithLeftCapWidth: 15.0 topCapHeight: 30.0];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage: backButtonImage forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
+    */
 
     return YES;
 }
