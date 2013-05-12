@@ -26,6 +26,8 @@
 @property (strong, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSMutableArray *venues;
 @property (strong, nonatomic) HANGVenue *currentVenue;
+@property (nonatomic) BOOL placesTablePressed;
+
 
 - (void)sendPostToAPI:(NSString*)text;
 - (void)fetchFoursqare;
