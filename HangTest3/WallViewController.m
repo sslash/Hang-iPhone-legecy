@@ -38,6 +38,25 @@ CLLocationManager *locationManager;
     [self setTopNavBar];
     self.tableData = [[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view.
+    [self setPlaceLabelClickable];
+}
+
+- (void) setPlaceLabelClickable
+{
+    self.placeLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTap)];
+    [self.placeLabel addGestureRecognizer:tapGesture];
+    
+    self.placesTableData = [[NSArray alloc] initWithObjects:@"sap",@"dap", nil];
+    [self.placesTableView reloadData];
+}
+
+-(void) labelTap
+{
+    NSLog(@"nigga");
+    [self.placesTableView setAlpha:1];
+    [self.placesTableView setNeedsDisplay];
 }
 
 - (void)viewDidUnload {
@@ -50,7 +69,6 @@ CLLocationManager *locationManager;
     // Dispose of any resources that can be recreated.
 }
 
-/////////////////////////////////
 
 - (void)startUpdatingLocation
 {
@@ -87,10 +105,10 @@ CLLocationManager *locationManager;
 {
     if (self.currentVenue != nil) {
         NSLog(@"name %@", self.currentVenue.name);
-        self.navigationTitle.title = self.currentVenue.name;
+        self.placeLabel.text = self.currentVenue.name;
 
     } else {
-        self.navigationTitle.title = @"";
+        self.placeLabel.text = @"";
     }
 }
 
@@ -145,48 +163,58 @@ CLLocationManager *locationManager;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.tableData count];
+    if ([tableView.restorationIdentifier isEqual: @"placesData"]){
+        return [self.placesTableData count];
+    }else {
+        return [self.tableData count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"juuupp");
     
+    if ([tableView.restorationIdentifier isEqual: @"placesData"]){
+        static NSString *CellIdentifier = @"placeCell";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier:CellIdentifier];
+        }
+        
+        // Set up the cell...
+        NSString *cellValue = [self.placesTableData objectAtIndex:indexPath.row];
+        cell.text = cellValue;
+        
+        return cell;
+        
+    } else {
     
+        static NSString *CellId = @"postCell";
+        PostTableCell *cell = (PostTableCell *)[tableView dequeueReusableCellWithIdentifier:CellId];
+        if (cell == nil)
+        {
+            cell = (PostTableCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
+        }
     
-    static NSString *CellId = @"PostTableCell";
-    PostTableCell *cell = (PostTableCell *)[tableView dequeueReusableCellWithIdentifier:CellId];
-    if (cell == nil)
-    {
-        cell = (PostTableCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
+        NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
+        cell.postDate.text = @"DATO";
+        //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
+        cell.postText.text = [post objectForKey:@"text"];
+        return cell;
     }
-    
-    NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
-    cell.postDate.text = @"DATO";
-    //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
-    cell.postText.text = [post objectForKey:@"text"];
-
-    /*
-    long timeStampString1 = (long)[post objectForKey: @"timeCreated"];
-    
-    timeStampString1 = timeStampString1 / 1000;
-    NSString * timeStampString = [[NSString alloc] initWithFormat:@"%ld", timeStampString1];
-    
-    NSTimeInterval _interval=[timeStampString doubleValue];
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
-    NSDateFormatter *_formatter=[[NSDateFormatter alloc]init];
-    [_formatter setDateFormat:@"dd.MM.yyyy"];
-    NSString *_date=[_formatter stringFromDate:date];
-     */
-    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 78;
+     if ([tableView.restorationIdentifier isEqual: @"placesData"]){
+         return 40;
+     } else {
+         return 78;
+     }
 }
-
-
-
 
 
 -(void) done:(NSArray*) posts {

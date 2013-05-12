@@ -16,15 +16,13 @@
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *navigationTitle;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
-
-
 @property (strong, nonatomic) IBOutlet UIButton *pushButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
-
 @property (strong, nonatomic) IBOutlet NSMutableArray *tableData;
-
-
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *placeLabel;
+@property (strong, nonatomic) IBOutlet UITableView *placesTableView;
+@property (strong, nonatomic) IBOutlet NSArray *placesTableData;
 @property (strong, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSMutableArray *venues;
 @property (strong, nonatomic) HANGVenue *currentVenue;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -50,7 +50,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uOb-Ab-nyN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="378" id="mRr-JY-cyl"/>
+                                    <constraint firstAttribute="height" constant="354" id="Mrj-Y9-0Zv"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostTableCell" rowHeight="100" id="h1g-5K-EAP" customClass="PostTableCell">
@@ -99,16 +99,51 @@
                                     <outlet property="delegate" destination="ldj-Qa-u4p" id="jUP-uc-nNc"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEY-xL-fQG">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Langesund" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-sz-Qqm">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="mQw-nj-yGo"/>
+                                            <constraint firstAttribute="width" constant="85" id="wK9-Zn-77O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93779721469999999" green="0.91639775199999995" blue="0.78952975599999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7E1-sz-Qqm" firstAttribute="centerX" secondItem="lEY-xL-fQG" secondAttribute="centerX" type="default" id="cgR-Tb-V7C"/>
+                                    <constraint firstItem="7E1-sz-Qqm" firstAttribute="centerY" secondItem="lEY-xL-fQG" secondAttribute="centerY" type="default" id="j5I-jG-uV9"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" restorationIdentifier="placesData" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" sectionIndexMinimumDisplayRowCount="5" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-Mu-M83">
+                                <color key="backgroundColor" red="0.93779721469999999" green="0.91639775199999995" blue="0.78952975599999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="FvV-y6-BRB"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="ldj-Qa-u4p" id="Gi0-v4-Sbx"/>
+                                    <outlet property="delegate" destination="ldj-Qa-u4p" id="Kxp-el-1rP"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="118" id="0Rg-3O-Bji"/>
-                            <constraint firstItem="Qbt-07-Mvl" firstAttribute="centerX" secondItem="svP-Ao-YIc" secondAttribute="centerX" type="default" id="0kt-0i-WSK"/>
                             <constraint firstItem="hxg-9k-OAy" firstAttribute="leading" secondItem="uOb-Ab-nyN" secondAttribute="leading" type="default" id="3GD-5G-pkw"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="34" id="5gO-64-qO4"/>
+                            <constraint firstItem="lEY-xL-fQG" firstAttribute="trailing" secondItem="svP-Ao-YIc" secondAttribute="trailing" type="default" id="G4z-pn-z2s"/>
                             <constraint firstItem="Qbt-07-Mvl" firstAttribute="centerX" secondItem="hxg-9k-OAy" secondAttribute="centerX" type="default" id="HA4-zl-vUR"/>
-                            <constraint firstItem="Qbt-07-Mvl" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="56" id="aTL-ZS-dWy"/>
-                            <constraint firstItem="hxg-9k-OAy" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="12" id="dkI-Ex-UDe"/>
+                            <constraint firstItem="hxg-9k-OAy" firstAttribute="centerX" secondItem="svP-Ao-YIc" secondAttribute="centerX" type="default" id="NWb-6y-KEe"/>
+                            <constraint firstItem="lEY-xL-fQG" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" type="default" id="OCp-s1-2P7"/>
+                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="IXR-Mu-M83" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZXU-f9-px8"/>
+                            <constraint firstItem="hxg-9k-OAy" firstAttribute="top" secondItem="lEY-xL-fQG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dTN-IO-HAr"/>
+                            <constraint firstItem="hxg-9k-OAy" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="45" id="dfr-OR-5BI"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="leading" secondItem="svP-Ao-YIc" secondAttribute="leading" type="default" id="gaW-RL-eJq"/>
+                            <constraint firstItem="lEY-xL-fQG" firstAttribute="leading" secondItem="svP-Ao-YIc" secondAttribute="leading" type="default" id="igJ-1v-tAK"/>
                             <constraint firstItem="hxg-9k-OAy" firstAttribute="trailing" secondItem="uOb-Ab-nyN" secondAttribute="trailing" type="default" id="tBg-2B-pun"/>
+                            <constraint firstItem="Qbt-07-Mvl" firstAttribute="top" secondItem="hxg-9k-OAy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="z3q-DZ-tnm"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="trailing" secondItem="svP-Ao-YIc" secondAttribute="trailing" type="default" id="z4o-Fg-UTN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LOL" id="NLc-wX-n0D">
@@ -120,6 +155,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="navigationTitle" destination="NLc-wX-n0D" id="nLd-6U-gF0"/>
+                        <outlet property="placeLabel" destination="7E1-sz-Qqm" id="bRA-mS-McM"/>
+                        <outlet property="placesTableView" destination="IXR-Mu-M83" id="vxe-8H-Obw"/>
                         <outlet property="pushButton" destination="Qbt-07-Mvl" id="J17-Dz-LrA"/>
                         <outlet property="refreshButton" destination="Pns-yK-xpv" id="BH6-pH-VG5"/>
                         <outlet property="tableView" destination="uOb-Ab-nyN" id="hM6-7W-tGM"/>
