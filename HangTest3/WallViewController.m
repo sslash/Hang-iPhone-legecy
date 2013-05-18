@@ -54,6 +54,7 @@ CLLocationManager *locationManager;
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
     [refreshControl endRefreshing];
+    [self updateCurrentVenue];
 }
 
 - (void) setPlaceLabelClickable
