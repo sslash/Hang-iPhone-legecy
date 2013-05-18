@@ -39,6 +39,21 @@ CLLocationManager *locationManager;
     self.tableData = [[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view.
     [self setPlaceLabelClickable];
+    
+    
+    // Set up the UIRefreshControl.
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+
+    // Create a UITableViewController so we can use a UIRefreshControl.
+    UITableViewController *tvc = [[UITableViewController alloc] initWithStyle:self.tableView.style];
+    tvc.tableView = self.tableView;
+    tvc.refreshControl = refreshControl;
+    [self addChildViewController:tvc];
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [refreshControl endRefreshing];
 }
 
 - (void) setPlaceLabelClickable
