@@ -27,9 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //[((WallViewController*) self.parentViewController) sendPostToAPI:self.messageView.text];
 	// Do any additional setup after loading the view.
+    [self.messageView becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

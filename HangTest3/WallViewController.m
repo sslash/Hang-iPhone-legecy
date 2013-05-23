@@ -53,6 +53,13 @@ CLLocationManager *locationManager;
     [self addChildViewController:tvc];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self updateCurrentVenue];
+    [self setTopNavBar];
+    [self fetchFoursqare];
+}
+
 - (void)refresh:(UIRefreshControl *)refreshControl {
     [refreshControl endRefreshing];
     NSLog(@"er det her?????");
@@ -147,8 +154,26 @@ CLLocationManager *locationManager;
 {
     if ([self.venues count] > 0) {
         [self.placesTableView reloadData];
-        self.currentVenue = [self.venues objectAtIndex:0];
+        
+        bool changeCurrentVenue = YES;
+        
+        if (self.currentVenue != nil) {
+            for (id venue in self.venues)
+            {
+                if ([self.currentVenue.venueId isEqualToString:[venue venueId]])
+                {
+                    changeCurrentVenue = NO;
+                }
+            }
+        }
+        
+        if (changeCurrentVenue)
+        {
+            self.currentVenue = [self.venues objectAtIndex:0];
+        }
+        
         [self fetchPostsFromAPI];
+        
     } else {
         self.currentVenue = nil;
     }
@@ -223,7 +248,7 @@ CLLocationManager *locationManager;
         //return [self.placesTableData count];
         return 5; // Should check if there are actually 4
     }else {
-        return [self.tableData count];
+        return [self.tableData count] * 2;
     }
 }
 
@@ -247,18 +272,38 @@ CLLocationManager *locationManager;
         
     } else {
     
-        static NSString *CellId = @"PostTableCell";
-        PostTableCell *cell = (PostTableCell *)[tableView dequeueReusableCellWithIdentifier:CellId];
-        if (cell == nil)
+        if (indexPath.row % 2 == 0)
         {
-            cell = (PostTableCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
-        }
+            static NSString *CellId = @"PostTableCell";
+            PostTableCell *cell = (PostTableCell *)[tableView dequeueReusableCellWithIdentifier:CellId];
+            if (cell == nil)
+            {
+                cell = (PostTableCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
+            }
     
-        NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
-        cell.postDate.text = [post objectForKey: @"timeCreated"];
-        //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
-        cell.postText.text = [post objectForKey:@"text"];
-        return cell;
+            NSDictionary * post = [self.tableData objectAtIndex:(indexPath.row / 2)];
+            cell.postDate.text = [post objectForKey: @"timeCreated"];
+            //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
+            cell.postText.text = [post objectForKey:@"text"];
+            return cell;
+        }
+        else
+        {
+            static NSString *CELL_ID = @"SOME_STUPID_ID";
+            
+            UITableViewCell * cell2 = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
+            
+            if (cell2 == nil)
+            {
+                cell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                               reuseIdentifier:CELL_ID];
+            }
+        
+            cell2.contentView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1];
+            [cell2 setUserInteractionEnabled:NO]; // prevent selection and other
+            
+            return cell2;
+        }
     }
 }
 
@@ -267,7 +312,14 @@ CLLocationManager *locationManager;
      if ([tableView.restorationIdentifier isEqual: @"placesData"]){
          return 40;
      } else {
-         return 78;
+         if (indexPath.row % 2 == 1)
+         {
+             return 8;
+         }
+         else
+         {
+             return 78;
+         }
      }
 }
 
@@ -275,9 +327,7 @@ CLLocationManager *locationManager;
 -(void) done:(NSArray*) posts {
     NSLog(@"Posts fetched. Will reload post data in GUI");
     [self.tableData setArray:posts];
-    //self.tableData = posts;
     [self.tableView reloadData];
-    //self.tableView.reloadData;
 }
 
 - (NSString *)deviceLocation {
@@ -293,17 +343,17 @@ CLLocationManager *locationManager;
     
 
     if ([[segue identifier] isEqualToString:@"PostViewSegue"])
-    {
-        PostViewController *postViewController =
-        [segue destinationViewController];
+    {        
+        PostViewController *postViewController = [segue destinationViewController];
         
         NSIndexPath *myIndexPath = [self.tableView
                                     indexPathForSelectedRow];
         
-        NSDictionary * post = [self.tableData objectAtIndex:myIndexPath.row];
+        NSDictionary *post = [self.tableData objectAtIndex:myIndexPath.row];
  
         postViewController.postDetails = [[NSArray alloc]
                                              initWithObjects: [post objectForKey:@"text"],[post objectForKey:@"id"], nil];
+
     }
     else if ([[segue identifier] isEqualToString:@"NewPostSegue"])
     {
@@ -311,18 +361,30 @@ CLLocationManager *locationManager;
         
         newPostViewController.wallViewController = self;
     }
+    
+    NSLog(@"%@", self.currentVenue.name);
 }
 // LOL
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (tableView == self.tableView)
+    {
+        return;
+    }
+    
     NSLog(@"index path: %@", indexPath );
     int index = [indexPath indexAtPosition:1];
     
     NSLog(@"pressed: %d", index );
     self.currentVenue = [self.venues objectAtIndex:index];
+    
+    NSLog(@"%@", self.currentVenue.name);
+
     [self fetchPostsFromAPI];
     [self setTopNavBar];
     [self hidePlacesTable];
+     
 }
 
 /*
