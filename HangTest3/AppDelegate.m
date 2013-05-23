@@ -21,11 +21,11 @@
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
     
     // set standard back button
-    
+    /*
     UIImage *backButtonImage = [UIImage imageNamed: @"back_btn"];
     backButtonImage = [backButtonImage stretchableImageWithLeftCapWidth: 0.0 topCapHeight: 30.0];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage: backButtonImage forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
-    
+    */
 
     return YES;
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -147,6 +147,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="   " id="NLc-wX-n0D">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="wwN-a2-91H">
+                            <connections>
+                                <segue destination="dEF-NR-mGa" kind="push" id="71t-OV-i4H"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="F5" id="Pns-yK-xpv">
                             <connections>
                                 <action selector="f5ButtonPressed:" destination="ldj-Qa-u4p" id="bpV-hU-ene"/>
@@ -166,6 +171,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uo-Mq-G5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="336" y="64"/>
+        </scene>
+        <!--New Post View Controller - New post-->
+        <scene sceneID="w5P-0N-Xv0">
+            <objects>
+                <viewController id="dEF-NR-mGa" customClass="NewPostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lcY-Rg-mMU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nev-gq-qAM">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint=""/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="VWK-0N-GYV"/>
+                                    <constraint firstAttribute="width" constant="308" id="tkF-eJ-cuJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.79416628649635035" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nev-gq-qAM" firstAttribute="top" secondItem="lcY-Rg-mMU" secondAttribute="top" constant="10" id="fyS-mv-SwR"/>
+                            <constraint firstItem="nev-gq-qAM" firstAttribute="centerX" secondItem="lcY-Rg-mMU" secondAttribute="centerX" type="default" id="jj3-75-fse"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New post" id="8hh-OA-hB7">
+                        <barButtonItem key="rightBarButtonItem" title="Publish" id="0UU-dN-t70">
+                            <connections>
+                                <action selector="didPressPublish:" destination="dEF-NR-mGa" id="UVt-pk-T3E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageView" destination="nev-gq-qAM" id="sTz-3U-9Lg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ioW-Ce-94V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="-636"/>
         </scene>
         <!--Post View Controller - Post-->
         <scene sceneID="cSV-ww-wHm">
@@ -223,6 +268,16 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="NSMutableArray" superclassName="NSArray">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSMutableArray.h"/>
+        </class>
+        <class className="NewPostViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewPostViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didPressPublish:"/>
+                <relationship kind="outlet" name="messageView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
         <class className="PostTableCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostTableCell.h"/>
             <relationships>
@@ -233,6 +288,7 @@
         <class className="PostViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postCommentBtnTouched:"/>
                 <relationship kind="outlet" name="commentInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="postCommentBtn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postLabel" candidateClass="UILabel"/>
@@ -241,6 +297,8 @@
         <class className="WallViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WallViewController.h"/>
             <relationships>
+                <relationship kind="action" name="f5ButtonPressed:"/>
+                <relationship kind="action" name="pushButtonPressed:"/>
                 <relationship kind="outlet" name="navigationTitle" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="placeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="placesTableData" candidateClass="NSArray"/>

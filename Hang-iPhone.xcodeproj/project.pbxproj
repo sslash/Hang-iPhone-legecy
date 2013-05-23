@@ -33,6 +33,7 @@
 		4385A031173F13D6001A4369 /* APIURLFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4385A02D173F13C3001A4369 /* APIURLFetcher.m */; };
 		4385A032173F13DB001A4369 /* HANGVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4385A022173F1328001A4369 /* HANGVenue.m */; };
 		4385A033173F13DF001A4369 /* HANGPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4385A024173F1328001A4369 /* HANGPost.m */; };
+		AFE0063B174E860300D867D3 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE0063A174E860200D867D3 /* NewPostViewController.m */; };
 		AFE1F62D173FD6DE004225AC /* topnavbar_img.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE1F62C173FD6DE004225AC /* topnavbar_img.png */; };
 		AFE1F62F173FDA27004225AC /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE1F62E173FDA26004225AC /* back_btn.png */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,8 @@
 		4385A02B173F13C3001A4369 /* UrlFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlFetcher.m; sourceTree = "<group>"; };
 		4385A02C173F13C3001A4369 /* APIURLFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIURLFetcher.h; sourceTree = "<group>"; };
 		4385A02D173F13C3001A4369 /* APIURLFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIURLFetcher.m; sourceTree = "<group>"; };
+		AFE00639174E860200D867D3 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
+		AFE0063A174E860200D867D3 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		AFE1F62C173FD6DE004225AC /* topnavbar_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topnavbar_img.png; sourceTree = "<group>"; };
 		AFE1F62E173FDA26004225AC /* back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_btn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +219,8 @@
 		4385A028173F1368001A4369 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AFE00639174E860200D867D3 /* NewPostViewController.h */,
+				AFE0063A174E860200D867D3 /* NewPostViewController.m */,
 				4357BAB5173F054B008D344A /* WallViewController.h */,
 				4357BAB6173F054B008D344A /* WallViewController.m */,
 				4357BAB8173F057E008D344A /* PostViewController.h */,
@@ -365,6 +370,7 @@
 				4385A032173F13DB001A4369 /* HANGVenue.m in Sources */,
 				4385A033173F13DF001A4369 /* HANGPost.m in Sources */,
 				4310159A173FAA0500C26D93 /* PostTableCell.m in Sources */,
+				AFE0063B174E860300D867D3 /* NewPostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
