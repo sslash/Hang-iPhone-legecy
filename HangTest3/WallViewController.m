@@ -9,6 +9,7 @@
 #import "WallViewController.h"
 #import "PostViewController.h"
 #import "PostTableCell.h"
+#import "NewPostViewController.h"
 
 @interface WallViewController ()
 
@@ -54,6 +55,7 @@ CLLocationManager *locationManager;
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
     [refreshControl endRefreshing];
+    NSLog(@"er det her?????");
     [self updateCurrentVenue];
 }
 
@@ -302,6 +304,12 @@ CLLocationManager *locationManager;
  
         postViewController.postDetails = [[NSArray alloc]
                                              initWithObjects: [post objectForKey:@"text"],[post objectForKey:@"id"], nil];
+    }
+    else if ([[segue identifier] isEqualToString:@"NewPostSegue"])
+    {
+        NewPostViewController *newPostViewController = [segue destinationViewController];
+        
+        newPostViewController.wallViewController = self;
     }
 }
 // LOL

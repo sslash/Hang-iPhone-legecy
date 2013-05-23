@@ -39,6 +39,11 @@
 }
 
 - (IBAction)didPressPublish:(id)sender {
+    
+    NSLog(@"%@", self.messageView.text);
+    
+    [self.wallViewController sendPostToAPI:self.messageView.text];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

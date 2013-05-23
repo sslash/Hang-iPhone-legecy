@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WallViewController.h"
 
 @interface NewPostViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextView *messageView;
+
+@property (weak, nonatomic) WallViewController *wallViewController;
 
 @end

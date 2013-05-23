@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-107" y="65"/>
         </scene>
-        <!--Wall View Controller -    -->
+        <!--Wall View Controller - Wall-->
         <scene sceneID="LQy-MW-RLU">
             <objects>
                 <viewController id="ldj-Qa-u4p" customClass="WallViewController" sceneMemberID="viewController">
@@ -71,7 +71,8 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="PostText" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-b4-a8N">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="2ve-9f-mSi"/>
+                                                        <constraint firstAttribute="height" constant="81" id="4ub-JZ-lYG"/>
+                                                        <constraint firstAttribute="width" constant="270" id="fuw-L1-1Hx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -81,11 +82,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="leading" secondItem="Mb9-qp-2wZ" secondAttribute="leading" type="default" id="5qP-rF-cqz"/>
-                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="top" secondItem="h1g-5K-EAP" secondAttribute="top" constant="33" id="Ggh-Yp-6z4"/>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="top" secondItem="h1g-5K-EAP" secondAttribute="top" constant="10" id="TkU-Wp-Xzw"/>
+                                            <constraint firstAttribute="trailing" secondItem="6yE-b4-a8N" secondAttribute="trailing" constant="20" type="default" id="eus-vf-bi3"/>
                                             <constraint firstItem="Mb9-qp-2wZ" firstAttribute="leading" secondItem="h1g-5K-EAP" secondAttribute="leading" constant="10" id="jLC-ff-6EL"/>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="trailing" secondItem="6yE-b4-a8N" secondAttribute="trailing" type="default" id="kqt-pF-65p"/>
+                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="top" secondItem="Mb9-qp-2wZ" secondAttribute="top" type="default" id="s5R-mO-9Xk"/>
+                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="centerY" secondItem="h1g-5K-EAP" secondAttribute="centerY" type="default" id="w1U-K3-WPk"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="postDate" destination="Mb9-qp-2wZ" id="ugH-oN-x7V"/>
@@ -146,15 +146,15 @@
                             <constraint firstItem="Qbt-07-Mvl" firstAttribute="top" secondItem="hxg-9k-OAy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="z3q-DZ-tnm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="   " id="NLc-wX-n0D">
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="wwN-a2-91H">
-                            <connections>
-                                <segue destination="dEF-NR-mGa" kind="push" id="71t-OV-i4H"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="F5" id="Pns-yK-xpv">
+                    <navigationItem key="navigationItem" title="Wall" id="NLc-wX-n0D">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Pns-yK-xpv">
                             <connections>
                                 <action selector="f5ButtonPressed:" destination="ldj-Qa-u4p" id="bpV-hU-ene"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="t2R-Ww-3T2">
+                            <connections>
+                                <segue destination="dEF-NR-mGa" kind="push" identifier="NewPostSegue" id="1d9-pt-CcI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -184,7 +184,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint=""/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="171" id="VWK-0N-GYV"/>
+                                    <constraint firstAttribute="height" constant="185" id="CFg-7x-6Bj"/>
                                     <constraint firstAttribute="width" constant="308" id="tkF-eJ-cuJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -193,7 +193,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.79416628649635035" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nev-gq-qAM" firstAttribute="top" secondItem="lcY-Rg-mMU" secondAttribute="top" constant="10" id="fyS-mv-SwR"/>
+                            <constraint firstItem="nev-gq-qAM" firstAttribute="top" secondItem="lcY-Rg-mMU" secondAttribute="top" constant="3" id="Z5V-93-2yS"/>
                             <constraint firstItem="nev-gq-qAM" firstAttribute="centerX" secondItem="lcY-Rg-mMU" secondAttribute="centerX" type="default" id="jj3-75-fse"/>
                         </constraints>
                     </view>
@@ -205,7 +205,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="messageView" destination="nev-gq-qAM" id="sTz-3U-9Lg"/>
+                        <outlet property="messageView" destination="nev-gq-qAM" id="Jpo-A7-SVW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioW-Ce-94V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6m-iC-GtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="64"/>
+            <point key="canvasLocation" x="881" y="58"/>
         </scene>
     </scenes>
     <classes>
