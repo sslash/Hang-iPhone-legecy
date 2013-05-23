@@ -247,8 +247,8 @@ CLLocationManager *locationManager;
     if ([tableView.restorationIdentifier isEqual: @"placesData"]){
         //return [self.placesTableData count];
         return 5; // Should check if there are actually 4
-    }else {
-        return [self.tableData count] * 2;
+    } else {
+        return [self.tableData count] * 2 - 1;
     }
 }
 
