@@ -95,6 +95,7 @@ CLLocationManager *locationManager;
 
 -(void) showPlacesTable
 {
+    [self.placesTableView reloadData];
     self.placesTablePressed = true;
     [self.placesTableView setAlpha:1];
     [self.placesTableView setNeedsDisplay];
@@ -260,6 +261,11 @@ CLLocationManager *locationManager;
     {
         [[cell textLabel] setTextColor:[UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1]];
         [[cell textLabel] setFont:[UIFont systemFontOfSize:14.0]];
+
+        if ([[[self.venues objectAtIndex:indexPath.row] name] isEqualToString:self.currentVenue.name])
+        {
+            cell.textLabel.text = @"";
+        }
     }
 }
 
@@ -279,6 +285,7 @@ CLLocationManager *locationManager;
         HANGVenue *cellValue = [self.venues objectAtIndex:indexPath.row];
         cell.textLabel.text = cellValue.name;
         
+        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
         
         return cell;
         
@@ -323,6 +330,11 @@ CLLocationManager *locationManager;
 {
      if ([tableView.restorationIdentifier isEqual: @"placesData"])
      {
+         if ([[[self.venues objectAtIndex:indexPath.row] name] isEqualToString:self.currentVenue.name])
+         {
+             return 0;
+         }
+         
          return 30;
      }
      else

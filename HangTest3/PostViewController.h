@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *postLabel;
 @property (strong, nonatomic) IBOutlet UITextField *commentInput;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *postCommentBtn;
+@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end

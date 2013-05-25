@@ -231,6 +231,7 @@
                         <outlet property="commentInput" destination="8Df-Ww-2VU" id="IIS-ZN-jeS"/>
                         <outlet property="postCommentBtn" destination="TdR-fh-J17" id="Kd3-Jo-LrP"/>
                         <outlet property="postLabel" destination="7Ke-vP-YY0" id="hnG-gc-1TE"/>
+                        <outlet property="toolbar" destination="bhm-CC-JHy" id="4Jl-8L-GMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6m-iC-GtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,6 +267,7 @@
                 <relationship kind="outlet" name="commentInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="postCommentBtn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
         <class className="WallViewController" superclassName="UIViewController">
