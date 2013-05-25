@@ -30,14 +30,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uOb-Ab-nyN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="451" id="kDW-5v-nlv"/>
+                                    <constraint firstAttribute="height" constant="370" id="Xwh-fg-ZVa"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostTableCell" rowHeight="100" id="h1g-5K-EAP" customClass="PostTableCell">
-                                        <rect key="frame" x="0.0" y="22" width="301" height="100"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostTableCell" rowHeight="100" id="h1g-5K-EAP" customClass="PostTableCell">
+                                        <rect key="frame" x="0.0" y="22" width="300" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="281" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb9-qp-2wZ">
@@ -52,7 +52,6 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="PostText" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-b4-a8N">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="81" id="4ub-JZ-lYG"/>
-                                                        <constraint firstAttribute="width" constant="270" id="fuw-L1-1Hx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -62,8 +61,9 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Mb9-qp-2wZ" secondAttribute="trailing" constant="20" type="default" id="F5V-aB-F6G"/>
                                             <constraint firstAttribute="trailing" secondItem="6yE-b4-a8N" secondAttribute="trailing" constant="20" type="default" id="eus-vf-bi3"/>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="leading" secondItem="h1g-5K-EAP" secondAttribute="leading" constant="10" id="jLC-ff-6EL"/>
+                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="leading" secondItem="6yE-b4-a8N" secondAttribute="leading" type="default" id="oWp-ki-4Qd"/>
                                             <constraint firstItem="6yE-b4-a8N" firstAttribute="top" secondItem="Mb9-qp-2wZ" secondAttribute="top" type="default" id="s5R-mO-9Xk"/>
                                             <constraint firstItem="6yE-b4-a8N" firstAttribute="centerY" secondItem="h1g-5K-EAP" secondAttribute="centerY" type="default" id="w1U-K3-WPk"/>
                                         </constraints>
@@ -101,7 +101,7 @@
                                 <color key="backgroundColor" red="0.93779721469999999" green="0.91639775199999995" blue="0.78952975599999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="YvN-n4-EUc"/>
-                                    <constraint firstAttribute="height" constant="339" id="bU9-VW-pyX"/>
+                                    <constraint firstAttribute="height" constant="300" id="wYM-Gq-ed2"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="ldj-Qa-u4p" id="Gi0-v4-Sbx"/>
@@ -111,15 +111,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IXR-Mu-M83" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="33" id="AFl-98-RjT"/>
-                            <constraint firstItem="IXR-Mu-M83" firstAttribute="centerX" secondItem="uOb-Ab-nyN" secondAttribute="centerX" type="default" id="IjE-wT-MdW"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="leading" secondItem="uOb-Ab-nyN" secondAttribute="leading" type="default" id="4yf-Cr-6V2"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="centerX" secondItem="lEY-xL-fQG" secondAttribute="centerX" type="default" id="64O-kS-IEa"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="trailing" secondItem="svP-Ao-YIc" secondAttribute="trailing" type="default" id="LwN-SZ-1gG"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" type="default" id="OCp-s1-2P7"/>
-                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="leading" secondItem="IXR-Mu-M83" secondAttribute="leading" type="default" id="RUL-1Q-GB7"/>
                             <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="lEY-xL-fQG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Z1k-39-V50"/>
-                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="45" id="h4u-LG-RYl"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="37" id="bk4-LR-Zjw"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="leading" secondItem="svP-Ao-YIc" secondAttribute="leading" type="default" id="igJ-1v-tAK"/>
-                            <constraint firstItem="IXR-Mu-M83" firstAttribute="centerX" secondItem="lEY-xL-fQG" secondAttribute="centerX" type="default" id="nfu-Yr-4rQ"/>
+                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="45" id="j3L-bW-eM5"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="trailing" secondItem="uOb-Ab-nyN" secondAttribute="trailing" type="default" id="kvo-n2-xDO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wall" id="NLc-wX-n0D">
@@ -242,9 +242,13 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="NSMutableArray" superclassName="NSArray">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSMutableArray.h"/>
+        </class>
         <class className="NewPostViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewPostViewController.h"/>
             <relationships>
+                <relationship kind="action" name="didPressPublish:"/>
                 <relationship kind="outlet" name="messageView" candidateClass="UITextView"/>
             </relationships>
         </class>
@@ -267,6 +271,8 @@
         <class className="WallViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WallViewController.h"/>
             <relationships>
+                <relationship kind="action" name="f5ButtonPressed:"/>
+                <relationship kind="action" name="pushButtonPressed:"/>
                 <relationship kind="outlet" name="navigationTitle" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="placeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="placesTableData" candidateClass="NSArray"/>

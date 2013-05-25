@@ -244,11 +244,22 @@ CLLocationManager *locationManager;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([tableView.restorationIdentifier isEqual: @"placesData"]){
+    if ([tableView.restorationIdentifier isEqual: @"placesData"])
+    {
+        NSLog(@"%i", [self.venues count]);
         //return [self.placesTableData count];
-        return 5; // Should check if there are actually 4
+        //return 5; // Should check if there are actually 4
+        return [self.venues count];
     } else {
-        return [self.tableData count] * 2 - 1;
+        return [self.tableData count] * 2 - 1; // with seperators
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([tableView.restorationIdentifier isEqual: @"placesData"])
+    {
+        [[cell textLabel] setTextColor:[UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1]];
+        [[cell textLabel] setFont:[UIFont systemFontOfSize:14.0]];
     }
 }
 
@@ -260,13 +271,14 @@ CLLocationManager *locationManager;
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc]
-                    initWithStyle:UITableViewCellStyleDefault
+                    initWithStyle:UITableViewCellStyleSubtitle
                     reuseIdentifier:CellIdentifier];
         }
         
         // Set up the cell...
         HANGVenue *cellValue = [self.venues objectAtIndex:indexPath.row];
         cell.textLabel.text = cellValue.name;
+        
         
         return cell;
         
@@ -309,9 +321,12 @@ CLLocationManager *locationManager;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     if ([tableView.restorationIdentifier isEqual: @"placesData"]){
-         return 40;
-     } else {
+     if ([tableView.restorationIdentifier isEqual: @"placesData"])
+     {
+         return 30;
+     }
+     else
+     {
          if (indexPath.row % 2 == 1)
          {
              return 8;
