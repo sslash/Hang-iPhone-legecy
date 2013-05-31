@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-107" y="65"/>
         </scene>
-        <!--Wall View Controller -    -->
+        <!--Wall View Controller - Wall-->
         <scene sceneID="LQy-MW-RLU">
             <objects>
                 <viewController id="ldj-Qa-u4p" customClass="WallViewController" sceneMemberID="viewController">
@@ -27,37 +27,17 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Write a sweet post!" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxg-9k-OAy">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="301" id="fAo-t2-drE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbt-07-Mvl">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Push">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pushButtonPressed:" destination="ldj-Qa-u4p" eventType="touchUpInside" id="Iae-Q0-ECT"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uOb-Ab-nyN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="354" id="Mrj-Y9-0Zv"/>
+                                    <constraint firstAttribute="height" constant="370" id="Xwh-fg-ZVa"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostTableCell" id="h1g-5K-EAP" customClass="PostTableCell">
                                         <rect key="frame" x="0.0" y="22" width="301" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="281" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="postDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb9-qp-2wZ">
@@ -123,7 +103,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93779721469999999" green="0.91639775199999995" blue="0.78952975599999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95107208029197077" green="0.91639775199999995" blue="0.78952975599999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="7E1-sz-Qqm" firstAttribute="centerY" secondItem="lEY-xL-fQG" secondAttribute="centerY" type="default" id="j5I-jG-uV9"/>
                                     <constraint firstItem="7E1-sz-Qqm" firstAttribute="centerX" secondItem="lEY-xL-fQG" secondAttribute="centerX" type="default" id="t4X-Vf-Bt5"/>
@@ -132,7 +112,8 @@
                             <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" restorationIdentifier="placesData" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" sectionIndexMinimumDisplayRowCount="5" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-Mu-M83">
                                 <color key="backgroundColor" red="0.93779721469999999" green="0.91639775199999995" blue="0.78952975599999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="131" id="YxT-WC-war"/>
+                                    <constraint firstAttribute="width" constant="300" id="YvN-n4-EUc"/>
+                                    <constraint firstAttribute="height" constant="300" id="wYM-Gq-ed2"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="ldj-Qa-u4p" id="Gi0-v4-Sbx"/>
@@ -140,28 +121,28 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hxg-9k-OAy" firstAttribute="leading" secondItem="uOb-Ab-nyN" secondAttribute="leading" type="default" id="3GD-5G-pkw"/>
-                            <constraint firstItem="IXR-Mu-M83" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="34" id="5gO-64-qO4"/>
-                            <constraint firstItem="Qbt-07-Mvl" firstAttribute="centerX" secondItem="hxg-9k-OAy" secondAttribute="centerX" type="default" id="HA4-zl-vUR"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="leading" secondItem="uOb-Ab-nyN" secondAttribute="leading" type="default" id="4yf-Cr-6V2"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="centerX" secondItem="lEY-xL-fQG" secondAttribute="centerX" type="default" id="64O-kS-IEa"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="trailing" secondItem="svP-Ao-YIc" secondAttribute="trailing" type="default" id="LwN-SZ-1gG"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" type="default" id="OCp-s1-2P7"/>
-                            <constraint firstItem="IXR-Mu-M83" firstAttribute="trailing" secondItem="svP-Ao-YIc" secondAttribute="trailing" type="default" id="P1X-CI-2YJ"/>
-                            <constraint firstItem="hxg-9k-OAy" firstAttribute="top" secondItem="lEY-xL-fQG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dTN-IO-HAr"/>
-                            <constraint firstItem="hxg-9k-OAy" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="45" id="dfr-OR-5BI"/>
-                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="142" id="eJv-uz-XCJ"/>
-                            <constraint firstItem="IXR-Mu-M83" firstAttribute="leading" secondItem="svP-Ao-YIc" secondAttribute="leading" type="default" id="gaW-RL-eJq"/>
+                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="lEY-xL-fQG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Z1k-39-V50"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="37" id="bk4-LR-Zjw"/>
                             <constraint firstItem="lEY-xL-fQG" firstAttribute="leading" secondItem="svP-Ao-YIc" secondAttribute="leading" type="default" id="igJ-1v-tAK"/>
-                            <constraint firstItem="lEY-xL-fQG" firstAttribute="centerX" secondItem="hxg-9k-OAy" secondAttribute="centerX" type="default" id="o31-BV-Bdh"/>
-                            <constraint firstItem="hxg-9k-OAy" firstAttribute="trailing" secondItem="uOb-Ab-nyN" secondAttribute="trailing" type="default" id="tBg-2B-pun"/>
-                            <constraint firstItem="Qbt-07-Mvl" firstAttribute="top" secondItem="hxg-9k-OAy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="z3q-DZ-tnm"/>
+                            <constraint firstItem="uOb-Ab-nyN" firstAttribute="top" secondItem="svP-Ao-YIc" secondAttribute="top" constant="45" id="j3L-bW-eM5"/>
+                            <constraint firstItem="IXR-Mu-M83" firstAttribute="trailing" secondItem="uOb-Ab-nyN" secondAttribute="trailing" type="default" id="kvo-n2-xDO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="   " id="NLc-wX-n0D">
-                        <barButtonItem key="rightBarButtonItem" title="F5" id="Pns-yK-xpv">
+                    <navigationItem key="navigationItem" title="Wall" id="NLc-wX-n0D">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Pns-yK-xpv">
                             <connections>
                                 <action selector="f5ButtonPressed:" destination="ldj-Qa-u4p" id="bpV-hU-ene"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="t2R-Ww-3T2">
+                            <connections>
+                                <segue destination="dEF-NR-mGa" kind="push" identifier="NewPostSegue" id="1d9-pt-CcI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -169,15 +150,53 @@
                         <outlet property="navigationTitle" destination="NLc-wX-n0D" id="nLd-6U-gF0"/>
                         <outlet property="placeLabel" destination="7E1-sz-Qqm" id="bRA-mS-McM"/>
                         <outlet property="placesTableView" destination="IXR-Mu-M83" id="vxe-8H-Obw"/>
-                        <outlet property="pushButton" destination="Qbt-07-Mvl" id="J17-Dz-LrA"/>
                         <outlet property="refreshButton" destination="Pns-yK-xpv" id="BH6-pH-VG5"/>
                         <outlet property="tableView" destination="uOb-Ab-nyN" id="hM6-7W-tGM"/>
-                        <outlet property="textField" destination="hxg-9k-OAy" id="tpO-s2-EIi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uo-Mq-G5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="336" y="64"/>
+        </scene>
+        <!--New Post View Controller - New post-->
+        <scene sceneID="w5P-0N-Xv0">
+            <objects>
+                <viewController id="dEF-NR-mGa" customClass="NewPostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lcY-Rg-mMU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nev-gq-qAM">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint=""/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="CFg-7x-6Bj"/>
+                                    <constraint firstAttribute="width" constant="307" id="jdG-5e-qkh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.79416628649635035" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nev-gq-qAM" firstAttribute="centerX" secondItem="lcY-Rg-mMU" secondAttribute="centerX" type="default" id="d2T-0O-LZL"/>
+                            <constraint firstItem="nev-gq-qAM" firstAttribute="top" secondItem="lcY-Rg-mMU" secondAttribute="top" constant="8" id="pLy-Zg-vyf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New post" id="8hh-OA-hB7">
+                        <barButtonItem key="rightBarButtonItem" title="Publish" id="0UU-dN-t70">
+                            <connections>
+                                <action selector="didPressPublish:" destination="dEF-NR-mGa" id="UVt-pk-T3E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageView" destination="nev-gq-qAM" id="Jpo-A7-SVW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ioW-Ce-94V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="-636"/>
         </scene>
         <!--Post View Controller - Post-->
         <scene sceneID="cSV-ww-wHm">
@@ -228,16 +247,27 @@
                         <outlet property="commentInput" destination="8Df-Ww-2VU" id="IIS-ZN-jeS"/>
                         <outlet property="postCommentBtn" destination="TdR-fh-J17" id="Kd3-Jo-LrP"/>
                         <outlet property="postLabel" destination="7Ke-vP-YY0" id="hnG-gc-1TE"/>
+                        <outlet property="toolbar" destination="bhm-CC-JHy" id="4Jl-8L-GMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6m-iC-GtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="64"/>
+            <point key="canvasLocation" x="881" y="58"/>
         </scene>
     </scenes>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NSMutableArray" superclassName="NSArray">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSMutableArray.h"/>
+        </class>
+        <class className="NewPostViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewPostViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didPressPublish:"/>
+                <relationship kind="outlet" name="messageView" candidateClass="UITextView"/>
+            </relationships>
         </class>
         <class className="PostTableCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostTableCell.h"/>
@@ -250,14 +280,18 @@
         <class className="PostViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postCommentBtnTouched:"/>
                 <relationship kind="outlet" name="commentInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="postCommentBtn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
         <class className="WallViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WallViewController.h"/>
             <relationships>
+                <relationship kind="action" name="f5ButtonPressed:"/>
+                <relationship kind="action" name="pushButtonPressed:"/>
                 <relationship kind="outlet" name="navigationTitle" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="placeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="placesTableData" candidateClass="NSArray"/>
