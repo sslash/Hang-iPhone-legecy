@@ -44,7 +44,9 @@ CLLocationManager *locationManager;
     // Set up the UIRefreshControl.
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to refresh"];
+    //refreshControl.tintColor = [UIColor purpleColor];
+    
     // Create a UITableViewController so we can use a UIRefreshControl.
     UITableViewController *tvc = [[UITableViewController alloc] initWithStyle:self.tableView.style];
     tvc.tableView = self.tableView;
@@ -53,8 +55,12 @@ CLLocationManager *locationManager;
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    [refreshControl endRefreshing];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing ..."];
     [self updateCurrentVenue];
+    [refreshControl endRefreshing];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to refresh"];
+
+    
 }
 
 - (void) setPlaceLabelClickable
@@ -253,8 +259,8 @@ CLLocationManager *locationManager;
         }
     
         NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
+        cell.postUserName.text = [post objectForKey: @"ownerUserName"];
         cell.postDate.text = [post objectForKey: @"timeCreated"];
-        //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
         cell.postText.text = [post objectForKey:@"text"];
         return cell;
     }

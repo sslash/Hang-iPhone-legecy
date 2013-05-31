@@ -53,25 +53,33 @@
                                     <constraint firstAttribute="height" constant="354" id="Mrj-Y9-0Zv"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostTableCell" rowHeight="100" id="h1g-5K-EAP" customClass="PostTableCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostTableCell" id="h1g-5K-EAP" customClass="PostTableCell">
                                         <rect key="frame" x="0.0" y="22" width="301" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="281" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb9-qp-2wZ">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="postDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb9-qp-2wZ">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="270" id="K1g-iB-kq5"/>
-                                                        <constraint firstAttribute="height" constant="20" id="vpJ-Ga-4cI"/>
+                                                        <constraint firstAttribute="height" constant="20" id="8lv-HZ-YzU"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="PostText" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-b4-a8N">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="postText" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-b4-a8N">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="2ve-9f-mSi"/>
+                                                        <constraint firstAttribute="height" constant="20" id="eJj-1n-cqO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="postUserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-5D-N8t">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="9el-55-xzh"/>
+                                                        <constraint firstAttribute="width" constant="270" id="ZMe-bl-4ZV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -81,15 +89,19 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="leading" secondItem="Mb9-qp-2wZ" secondAttribute="leading" type="default" id="5qP-rF-cqz"/>
-                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="top" secondItem="h1g-5K-EAP" secondAttribute="top" constant="33" id="Ggh-Yp-6z4"/>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="top" secondItem="h1g-5K-EAP" secondAttribute="top" constant="10" id="TkU-Wp-Xzw"/>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="leading" secondItem="h1g-5K-EAP" secondAttribute="leading" constant="10" id="jLC-ff-6EL"/>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="trailing" secondItem="6yE-b4-a8N" secondAttribute="trailing" type="default" id="kqt-pF-65p"/>
+                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="top" secondItem="h1g-5K-EAP" secondAttribute="top" constant="30" id="Dcs-Az-7xF"/>
+                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="leading" secondItem="Tza-5D-N8t" secondAttribute="leading" type="default" id="Htr-6Y-Tj4"/>
+                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="leading" secondItem="Mb9-qp-2wZ" secondAttribute="leading" type="default" id="T0z-FT-RpD"/>
+                                            <constraint firstItem="Tza-5D-N8t" firstAttribute="top" secondItem="h1g-5K-EAP" secondAttribute="top" constant="5" id="eWz-QQ-1h0"/>
+                                            <constraint firstItem="Tza-5D-N8t" firstAttribute="leading" secondItem="h1g-5K-EAP" secondAttribute="leading" constant="10" id="ipu-Wn-1w0"/>
+                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="trailing" secondItem="Mb9-qp-2wZ" secondAttribute="trailing" type="default" id="pH6-Z9-RUS"/>
+                                            <constraint firstAttribute="bottom" secondItem="6yE-b4-a8N" secondAttribute="bottom" constant="5" id="psz-C4-X3R"/>
+                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="trailing" secondItem="Tza-5D-N8t" secondAttribute="trailing" type="default" id="wyh-YC-BoP"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="postDate" destination="Mb9-qp-2wZ" id="ugH-oN-x7V"/>
                                             <outlet property="postText" destination="6yE-b4-a8N" id="l8y-n9-4a9"/>
+                                            <outlet property="postUserName" destination="Tza-5D-N8t" id="Ir8-Ro-AQh"/>
                                             <segue destination="qG4-ME-uEb" kind="push" identifier="PostViewSegue" id="U7G-vq-NYG"/>
                                         </connections>
                                     </tableViewCell>
@@ -193,6 +205,9 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="postText" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ke-vP-YY0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="gNW-4r-KzB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -204,6 +219,7 @@
                             <constraint firstItem="bhm-CC-JHy" firstAttribute="trailing" secondItem="76U-b1-JDE" secondAttribute="trailing" type="default" id="Ej4-9b-m4w"/>
                             <constraint firstItem="bhm-CC-JHy" firstAttribute="bottom" secondItem="76U-b1-JDE" secondAttribute="bottom" type="default" id="dba-FT-zVm"/>
                             <constraint firstItem="7Ke-vP-YY0" firstAttribute="leading" secondItem="76U-b1-JDE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="msl-Tp-82N"/>
+                            <constraint firstAttribute="trailing" secondItem="7Ke-vP-YY0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nMA-le-f7O"/>
                             <constraint firstItem="bhm-CC-JHy" firstAttribute="leading" secondItem="76U-b1-JDE" secondAttribute="leading" type="default" id="noB-UE-OdC"/>
                         </constraints>
                     </view>
@@ -228,6 +244,7 @@
             <relationships>
                 <relationship kind="outlet" name="postDate" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="postText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postUserName" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="PostViewController" superclassName="UIViewController">

@@ -10,6 +10,7 @@
 
 @interface PostTableCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *postUserName;
 @property (strong, nonatomic) IBOutlet UILabel *postDate;
 @property (strong, nonatomic) IBOutlet UILabel *postText;
 
