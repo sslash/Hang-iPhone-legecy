@@ -305,11 +305,29 @@ CLLocationManager *locationManager;
                 cell = (PostTableCell *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
             }
     
-        NSDictionary * post = [self.tableData objectAtIndex:indexPath.row];
-        cell.postUserName.text = [post objectForKey: @"ownerUserName"];
-        cell.postDate.text = [post objectForKey: @"timeCreated"];
-        cell.postText.text = [post objectForKey:@"text"];
-        return cell;
+            NSDictionary * post = [self.tableData objectAtIndex:(indexPath.row / 2)];
+            cell.postDate.text = [post objectForKey: @"timeCreated"];
+            //cell.postDate.text = (NSString *)[post objectForKey: @"timeCreated"];
+            cell.postText.text = [post objectForKey:@"text"];
+            return cell;
+        }
+        else
+        {
+            static NSString *CELL_ID = @"SOME_STUPID_ID";
+            
+            UITableViewCell * cell2 = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
+            
+            if (cell2 == nil)
+            {
+                cell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                               reuseIdentifier:CELL_ID];
+            }
+        
+            cell2.contentView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1];
+            [cell2 setUserInteractionEnabled:NO]; // prevent selection and other
+            
+            return cell2;
+        }
     }
 }
 

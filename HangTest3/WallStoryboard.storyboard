@@ -50,7 +50,7 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="postText" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-b4-a8N">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="eJj-1n-cqO"/>
+                                                        <constraint firstAttribute="height" constant="81" id="4ub-JZ-lYG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -69,14 +69,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="top" secondItem="h1g-5K-EAP" secondAttribute="top" constant="30" id="Dcs-Az-7xF"/>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="leading" secondItem="Tza-5D-N8t" secondAttribute="leading" type="default" id="Htr-6Y-Tj4"/>
-                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="leading" secondItem="Mb9-qp-2wZ" secondAttribute="leading" type="default" id="T0z-FT-RpD"/>
-                                            <constraint firstItem="Tza-5D-N8t" firstAttribute="top" secondItem="h1g-5K-EAP" secondAttribute="top" constant="5" id="eWz-QQ-1h0"/>
-                                            <constraint firstItem="Tza-5D-N8t" firstAttribute="leading" secondItem="h1g-5K-EAP" secondAttribute="leading" constant="10" id="ipu-Wn-1w0"/>
-                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="trailing" secondItem="Mb9-qp-2wZ" secondAttribute="trailing" type="default" id="pH6-Z9-RUS"/>
-                                            <constraint firstAttribute="bottom" secondItem="6yE-b4-a8N" secondAttribute="bottom" constant="5" id="psz-C4-X3R"/>
-                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="trailing" secondItem="Tza-5D-N8t" secondAttribute="trailing" type="default" id="wyh-YC-BoP"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mb9-qp-2wZ" secondAttribute="trailing" constant="20" type="default" id="F5V-aB-F6G"/>
+                                            <constraint firstAttribute="trailing" secondItem="6yE-b4-a8N" secondAttribute="trailing" constant="20" type="default" id="eus-vf-bi3"/>
+                                            <constraint firstItem="Mb9-qp-2wZ" firstAttribute="leading" secondItem="6yE-b4-a8N" secondAttribute="leading" type="default" id="oWp-ki-4Qd"/>
+                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="top" secondItem="Mb9-qp-2wZ" secondAttribute="top" type="default" id="s5R-mO-9Xk"/>
+                                            <constraint firstItem="6yE-b4-a8N" firstAttribute="centerY" secondItem="h1g-5K-EAP" secondAttribute="centerY" type="default" id="w1U-K3-WPk"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="postDate" destination="Mb9-qp-2wZ" id="ugH-oN-x7V"/>
