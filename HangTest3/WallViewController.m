@@ -66,9 +66,8 @@ CLLocationManager *locationManager;
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing ..."];
     [self updateCurrentVenue];
     [refreshControl endRefreshing];
-    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to refresh"];
-
-    
+    NSLog(@"er det her?????");
+    [self updateCurrentVenue];
 }
 
 - (void) setPlaceLabelClickable
