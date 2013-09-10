@@ -13,7 +13,7 @@
 @property (strong, nonatomic) NSString *venueId;
 @property (strong, nonatomic) NSString *ownerid;
 @property (strong, nonatomic) NSString *text;
-@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSDate *timestamp;
 
 - (Post *)init:(NSString *)venueId andOwnerId:(NSString *)ownerId andText:(NSString *)text;
 

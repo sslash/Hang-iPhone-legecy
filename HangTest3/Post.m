@@ -15,7 +15,7 @@
     self.venueId = venueId;
     self.ownerid = ownerId;
     self.text = text;
-    self.date = 0;
+    self.timestamp = [NSDate date];
     
     return self;
 }
