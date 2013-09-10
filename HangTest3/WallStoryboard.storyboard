@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1wn-cP-PzF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -34,7 +34,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostTableCell" id="h1g-5K-EAP" customClass="PostTableCell">
-                                        <rect key="frame" x="0.0" y="22" width="301" height="100"/>
+                                        <rect key="frame" x="0.0" y="22" width="300" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="99"/>
@@ -221,21 +221,22 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="postText" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ke-vP-YY0">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="gNW-4r-KzB"/>
+                                    <constraint firstAttribute="height" constant="185" id="60b-FX-9ff"/>
+                                    <constraint firstAttribute="width" constant="307" id="PgE-Cc-axy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.79416628649999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Ke-vP-YY0" firstAttribute="top" secondItem="76U-b1-JDE" secondAttribute="top" constant="20" symbolic="YES" type="default" id="61W-DS-Pgb"/>
                             <constraint firstItem="bhm-CC-JHy" firstAttribute="trailing" secondItem="76U-b1-JDE" secondAttribute="trailing" type="default" id="Ej4-9b-m4w"/>
+                            <constraint firstItem="7Ke-vP-YY0" firstAttribute="top" secondItem="76U-b1-JDE" secondAttribute="top" constant="8" id="ReZ-HQ-GIQ"/>
+                            <constraint firstItem="7Ke-vP-YY0" firstAttribute="leading" secondItem="76U-b1-JDE" secondAttribute="leading" constant="6" id="UYW-RA-71A"/>
                             <constraint firstItem="bhm-CC-JHy" firstAttribute="bottom" secondItem="76U-b1-JDE" secondAttribute="bottom" type="default" id="dba-FT-zVm"/>
-                            <constraint firstItem="7Ke-vP-YY0" firstAttribute="leading" secondItem="76U-b1-JDE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="msl-Tp-82N"/>
-                            <constraint firstAttribute="trailing" secondItem="7Ke-vP-YY0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nMA-le-f7O"/>
                             <constraint firstItem="bhm-CC-JHy" firstAttribute="leading" secondItem="76U-b1-JDE" secondAttribute="leading" type="default" id="noB-UE-OdC"/>
                         </constraints>
                     </view>
@@ -277,7 +278,6 @@
         <class className="PostViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostViewController.h"/>
             <relationships>
-                <relationship kind="action" name="postCommentBtnTouched:"/>
                 <relationship kind="outlet" name="commentInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="postCommentBtn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postLabel" candidateClass="UILabel"/>
@@ -287,8 +287,6 @@
         <class className="WallViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WallViewController.h"/>
             <relationships>
-                <relationship kind="action" name="f5ButtonPressed:"/>
-                <relationship kind="action" name="pushButtonPressed:"/>
                 <relationship kind="outlet" name="navigationTitle" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="placeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="placesTableData" candidateClass="NSArray"/>
